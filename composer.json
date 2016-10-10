@@ -1,0 +1,15 @@
+{
+    "name": "agolomazov/ambi",
+    "description": "Test task for ambi",
+    "authors": [
+        {
+            "name": "Антон Голомазов",
+            "email": "agolomazov@s-get.ru"
+        }
+    ],
+    "require": {
+        "electrolinux/phpquery": "0.9.6",
+        "j4mie/idiorm": "v1.5.1",
+        "robmorgan/phinx": "v0.6.4"
+    }
+}
