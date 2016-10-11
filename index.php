@@ -37,6 +37,7 @@ if (!$exist_data) {
     // Получаем данные из базы
     $data = get_data_temperature($exist_data);
 }
+
 ?>
 
 <!doctype html>
@@ -114,9 +115,13 @@ if (!$exist_data) {
                         <span class="day_weekly"><?= $data['data'][$i]['day_weekley']; ?></span>
                     </td>
                     <td>
-                        <div>Ожидаемая погода - <?= $item['day_comment_short']; ?></div>
-                        <div>Рассвет - <?= $item['sunrise']; ?></div>
-                        <div>Закат - <?= $item['sunset']; ?></div>
+                        <div>Ожидаемая погода - <?= $data['data'][$i]['day_comment_short']; ?></div>
+                        <?php if($data['data'][$i]['sunrise']): ?>
+                            <div>Рассвет - <?= $data['data'][$i]['sunrise']; ?></div>
+                        <?php endif; ?>
+                        <?php if($data['data'][$i]['sunset']): ?>
+                            <div>Закат - <?= $data['data'][$i]['sunset']; ?></div>
+                        <?php endif; ?>
                     </td>
                     <td>
                         <?php foreach ($data['data'][$i]['details'] as $detail): ?>
