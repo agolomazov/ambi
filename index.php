@@ -22,7 +22,7 @@ $exist_data = ORM::for_table('changes')
     ->where([
         'city' => $config['city']
     ])
-    ->where_raw('`created`  > UNIX_TIMESTAMP(ADDDATE(CURRENT_TIMESTAMP(), INTERVAL -' . $config["cache_time"] . ' HOUR))')
+    ->where_raw('UNIX_TIMESTAMP(`created`)  > UNIX_TIMESTAMP(ADDDATE(CURRENT_TIMESTAMP(), INTERVAL -' . $config["cache_time"] . ' HOUR))')
     ->find_one();
 
 
